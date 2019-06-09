@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>...</title>
+		<script src="school.js"></script>
+	</head>
+	<body>
+		<div style="float: left;">
+			<form>
+				<input size="50" type="text" name="tekst" placeholder="Jan Kowalski, Angielski, 4">
+				<input type="button" value="save" onclick="javascript:save()">
+			</form>
+			<form style="padding-top: 5px">
+				<input size="50" type="text" name="tekst" placeholder="Jan Kowalski">
+				<input type="button" value="delete student" onclick="javascript:deleteStudent()">
+			</form>
+			<form id=deleteSubject style="padding-top: 5px">
+				<input size="50" type="text" name="tekst" placeholder="Angielski">
+				<input type="button" value="delete subject" onclick="javascript:deleteSubject()">
+			</form>
+			<form style="padding-top: 5px">
+				<input size="50" type="text" name="tekst" placeholder="Jan Kowalski, Angielski, 4">
+				<input type="button" value="delete grade" onclick="javascript:deleteGrade()">
+			</form>
+			<form style="padding-top: 5px">
+				<input size="50" type="text" name="tekst" placeholder="Jan Kowalski, Andrzej Lubicz">
+				<input type="button" value="change Student Name" onclick="javascript:changeStudentName()">
+			</form>
+			<form style="padding-top: 5px">
+				<input size="50" type="text" name="tekst" placeholder="Polski, Angielski">
+				<input type="button" value="change Subject Name" onclick="javascript:changeSubjectName()">
+			</form>
+	
+			<form style="padding-top: 5px">
+				<input id="ms" size="50" type="text" name="tekst" placeholder="Jan Kowalski">
+				<input type="button" value="mean for student" onclick="javascript:meanStudent()">
+			</form>
+			<form style="padding-top: 5px">
+				<input id="ms" size="50" type="text" name="tekst" placeholder="Angielski">
+				<input type="button" value="mean for subject" onclick="javascript:meanSubject()">
+			</form>
+			<div style="padding-top: 5px">
+				<canvas id="mscanvas"
+					width="200"
+					height="50"
+					style="border:1px solid #000000;">
+					Wygląda na to, że twoja przeglądarka nie obsługuje elementu "canvas" / It looks like your browser does not support the "canvas" element
+				</canvas>
+			</div>
+		</div>
+
+	
+		<div style="padding-top: 20px; float: right;">
+			<div id="list" style="padding-top: 20px" >
+				<select id="studentsList" style="margin-left: 210px" onchange="javascript:studentChart(this)">
+					<option>
+						Select a student
+					</option>
+				</select>
+				<select id="subjectsList" onchange="javascript:subjectChart(this)">
+					<option>
+						Select a subject
+					</option>
+				</select>
+			</div>
+			<canvas id="legend"
+				width="200"
+				height="200"
+				style="border:1px solid #000000;">
+				Wygląda na to, że twoja przeglądarka nie obsługuje elementu "canvas" / It looks like your browser does not support the "canvas" element
+			</canvas>
+			<canvas id="canvas"
+				width="400"
+				height="400"
+				style="border:1px solid #000000;">
+		  		Wygląda na to, że twoja przeglądarka nie obsługuje elementu "canvas" / It looks like your browser does not support the "canvas" element
+			</canvas>
+		</div>
+
+	</body>
+</html>

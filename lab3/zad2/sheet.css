@@ -1,0 +1,87 @@
+.empty{
+    all: initial;
+}
+
+.full{
+    all: initial;
+}
+
+
+aside  {
+    float: right;
+    margin: 0px 0px 0px 0px;
+    width: 50%;
+
+}
+footer {
+    clear: both;
+    line-height: 200%;
+}      
+header {
+    text-align: left;
+}    
+    
+main { 
+    float: left;
+    padding: 0px 0px 0px 5px;
+    
+}
+nav {
+    float: left;
+}
+nav ul {
+}
+nav li {
+    margin: 0px 7px 0px 7px
+}
+
+h1 {
+    margin: 2px 0px 0px 4px;
+}
+
+h2 {
+    margin: 2px 0px 0px 4px;
+}
+
+pre {
+    margin: 10px 5px 0px 4px;
+}
+
+a {
+    margin: 0px 0px 0px 4px;
+}
+
+
+.azure{
+    box-sizing: border-box;
+    box-shadow: 0 0 1em black;
+    border: 2px solid black;
+    margin: 10px;
+    background-color: #EFF;
+}
+
+@keyframes kolor{
+    from {color: red;}
+    to {color: blue;}
+}
+
+.example{
+    animation: kolor 1s infinite alternate;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	.tytul{
+        color: red;
+    }
+}
+@media (max-width: 767px) {
+	.tytul{
+        color: blue;
+    }
+}
+
+
+
+
+
+

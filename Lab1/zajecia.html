@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="sheete.css"
+          media="screen"
+          type="text/css">
+    <title>
+      Sklep internetowy
+    </title>
+  </head>
+  <body>
+    <header class="w3-bar w3-orange">
+        <button class="w3-bar-item w3-button"><i class="fa fa-shopping-cart"></i></button>
+        <div class="w3-hide-small w3-dropdown-hover">
+            <button class="w3-button w3-orange">Produkty</button>
+            <div class="w3-dropdown-content w3-bar-block w3-border">
+                    <a href="#" class="w3-bar-item w3-button">Komputery</a>
+                    <a href="#" class="w3-bar-item w3-button">Myszki</a>
+            </div>
+        </div>
+
+    
+        <a onclick="myFunction()" class="w3-bar-item w3-dropdown-click w3-center w3-hide-large w3-hide-medium">
+            <i class="fa fa-align-justify"></i>
+        </a>
+        <div id="Demo" class= "w3-mobile w3-hide w3-bar-block w3-hide-large w3-hide-medium">
+          <div class="w3-dropdown-hover">
+                <button class="w3-button w3-orange">Produkty</button>
+                <div class="w3-dropdown-content w3-bar-block w3-border">
+                        <a href="#" class="w3-bar-item w3-button">Komputery</a>
+                        <a href="#" class="w3-bar-item w3-button">Myszki</a>
+                </div>
+            </div>
+            <input type="text" placeholder="Szukaj" name="search" class="w3-bar-item w3-input w3-green">
+            <button class="w3-bar-item w3-button w3-grey w3-text-white">szukaj</button>
+        </div>
+
+        <div class = "w3-right w3-hide-small">
+            <input type="text" placeholder="Szukaj" name="search" class="w3-bar-item w3-input w3-green">
+            <button class="w3-bar-item w3-button w3-grey w3-text-white">szukaj</button>
+        </div>
+        
+        </a>
+    </header>
+
+ 
+    <main class = "flip-box">
+      <div class="flip-box-inner">
+          <div class="w3-row-padding w3-margin-top">
+            <div class="w3-third w3-mobile">
+                <div class="w3-card w3-center">
+                    <img src="Hot-sale-latest-computer-hardware-Intel-Core.jpg" class="w3-round" alt="Computer" style="width:40%">
+                    <div class="w3-conteiner w3-center">
+                      <p>
+                        - Bardzo dobry komputer<br/>
+                        - 16gb RAMu<br/>
+                        - blablabla<br/>
+                      </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-twothird">
+                <div class="w3-card w3-center">
+                    <img src="Hot-sale-latest-computer-hardware-Intel-Core.jpg" class="w3-round" alt="Computer" style="width:40%">
+                    <div class="w3-conteiner w3-center">
+                        <p>
+                          - blablabla<br/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="w3-row-padding w3-margin-top">
+              <div class="w3-half">
+                  <div class="w3-card w3-center">
+                      <img src="myszka.jpg" class="w3-round" alt="Myszka" style="width:40%">
+                      <div class="w3-conteiner w3-center">
+                        <p>
+                            - myszka<br/>
+                        </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="w3-half">
+                  <div class="w3-card w3-center">
+                      <img src="myszka.jpg" class="w3-round" alt="Myszka" style="width:40%">
+                      <div class="w3-conteiner w3-center">
+                          <p>
+                            - myszka<br/>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+    </main>
+
+    <footer class="w3-row-padding">
+      <p class = "w3-quarter">
+
+      </p>
+        <p class="w3-center w3-conteiner w3-green w3-half">
+          Jan Ilczuk
+        </p>
+    </footer>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("Demo");
+          if (x.className.indexOf("w3-show") == -1) {  
+            x.className += " w3-show";
+          } else { 
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+        </script>
+  </body>
+</html>

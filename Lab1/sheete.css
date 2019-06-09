@@ -1,0 +1,29 @@
+.flip-box {
+    background-color: transparent;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    animation: flipanimation 2s infinite alternate
+  }
+  
+
+  
+
+
+  @keyframes flipanimation{
+    0% {}
+    50% {transform: rotateX(180deg);}
+    100% {transform: rotateX(180deg) rotateY(180deg);}
+}

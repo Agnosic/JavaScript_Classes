@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible"
+          content="ie=edge">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous"><!-- Page title -->
+    <link rel="stylesheet" href="foot.css" media="screen" type="text/css">
+    <title>
+            Everything is an object
+    </title>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="mainPage.html"><i class="fas fa-archway"></i>Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="Chapters.html"><i class="fas fa-book-open"></i>Chapters</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="author.html"><i class="far fa-address-card"></i>Author</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+ 
+    <main class="ml-4 mr-4">
+        <h1>
+            Everything
+        </h1>
+        <h1 class="ml-5">
+                Is an Object
+        </h1>
+        <blockquote class="blockquote">
+            <p class="mb-0">“If we spoke a different language, we would perceive a somewhat
+                    different world.” </p>
+            <footer class="blockquote-footer">Ludwig Wittgenstein (1889-1951) </footer>
+        </blockquote>
+        <br>
+        <h5>
+            Although it is based on C++, Java is more of a “pure” object-oriented
+            language. 
+            
+        </h5>
+        <p>
+            <br>
+            Both C++ and Java are hybrid languages, but in Java the designers felt that the hybridization
+            was not as important as it was in C++. A hybrid language allows multiple programming
+            styles; the reason C++ is hybrid is to support backward compatibility with the C language.
+            Because C++ is a superset of the C language, it includes many of that language’s undesirable
+            features, which can make some aspects of C++ overly complicated.
+            <br>
+            <br>
+            The Java language assumes that you want to do only object-oriented programming. This
+            means that before you can begin you must shift your mindset into an object-oriented world
+            (unless it’s already there). The benefit of this initial effort is the ability to program in a
+            language that is simpler to learn and to use than many other OOP languages. In this chapter
+            you’ll see the basic components of a Java program and learn that (almost) everything in Java
+            is an object. 
+        </p>
+        <a name="manipulate"></a>
+        <h3>
+            You manipulate objects
+        </h3>
+        <h3 class="ml-5">
+            with references
+        </h3>
+        <p>
+            Each programming language has its own means of manipulating elements in memory.
+            Sometimes the programmer must be constantly aware of what type of manipulation is going
+            on. Are you manipulating the element directly, or are you dealing with some kind of indirect
+            representation (a pointer in C or C++) that must be treated with a special syntax? 
+            <br>
+            <br>
+            All this is simplified in Java. You treat everything as an object, using a single consistent
+            syntax. Although you <b><i>treat</i></b> everything as an object, the identifier you manipulate is actually a
+            “reference” to an object<span class='footnote' data-toggle="tooltip" title="This can be a flashpoint. There are those who say, “Clearly, it’s a pointer,” but this presumes an underlying
+            implementation. Also, Java references are much more akin to C++ references than to pointers in their syntax. In the 1st
+            edition of this book, I chose to invent a new term, “handle,” because C++ references and Java references have some
+            important differences. I was coming out of C++ and did not want to confuse the C++ programmers whom I assumed
+            would be the largest audience for Java."></span> You might imagine a television (the object) and a remote control
+            (the reference). As long as you’re holding this reference, you have a connection to the
+            television, but when someone says, “Change the channel” or “Lower the volume,” what you’re
+            manipulating is the reference, which in turn modifies the object. If you want to move around 
+            the room and still control the television, you take the remote/reference with you, not the
+            television. 
+            <br>
+            <br>
+            Also, the remote control can stand on its own, with no television. That is, just because you
+            have a reference doesn’t mean there’s necessarily an object connected to it. So if you want to
+            hold a word or sentence, you create a <b>String</b> reference:  
+            <br>
+            <br>
+            <code>String s;</code>  
+            <br>
+            <br>
+            But here you’ve created <b><i>only</i></b> the reference, not an object. If you decided to send a message to
+            s at this point, you’ll get an error because <b>s</b> isn’t actually attached to anything (there’s no
+            television). A safer practice, then, is always to initialize a reference when you create it: 
+            <br>
+            <br>
+            <code>String s = "asdf";</code>  
+            <br>
+            <br>
+            However, this uses a special Java feature: Strings can be initialized with quoted text.
+            Normally, you must use a more general type of initialization for objects.
+        </p>
+        <a name="must"></a>
+        <h3>
+            You must create 
+        </h3>
+        <h3 class="ml-5">
+            all the objects
+        </h3>
+        <p>
+            When you create a reference, you want to connect it with a new object. You do so, in general,
+            with the <b>new</b> operator. The keyword <b>new</b> says, “Make me a new one of these objects.” So in
+            the preceding example, you can say:
+            <br>
+            <br>
+            <code>String s = new String("asdf"); </code>  
+            <br>
+            <br>
+            Not only does this mean “Make me a new <b>String</b>,” but it also gives information about <b><i>how</i></b> to
+            make the <b>String</b> by supplying an initial character string. 
+            <br>
+            <br>
+            Of course, Java comes with a plethora of ready-made types in addition to <b>String</b>. What’s
+            more important is that you can create your own types. In fact, creating new types is the
+            fundamental activity in Java programming, and it’s what you’ll be learning about in the rest
+            of this book.
+            <h4>
+                Where storage lives
+            </h4>
+            It’s useful to visualize some aspects of how things are laid out while the program is running—
+            in particular how memory is arranged. There are five different places to store data: 
+        
+            <ol>
+                <br>
+                <li>
+                    <b>Registers</b>. This is the fastest storage because it exists in a place different from that of
+                    other storage: inside the processor. However, the number of registers is severely
+                    limited, so registers are allocated as they are needed. You don’t have direct control,
+                    nor do you see any evidence in your programs that registers even exist (C & C++, on
+                    the other hand, allow you to suggest register allocation to the compiler). 
+                </li>
+                <br>
+                <li>
+                    <b>The stack</b>. This lives in the general random-access memory (RAM) area, but has
+                    direct support from the processor via its stack pointer. The <b><i>stack pointer</i></b> is moved
+                    down to create new memory and moved up to release that memory. This is an
+                    extremely fast and efficient way to allocate storage, second only to registers. The Java
+                    system must know, while it is creating the program, the exact lifetime of all the items
+                    that are stored on the stack. This constraint places limits on the flexibility of your
+                    programs, so while some Java storage exists on the stack—in particular, object
+                    references—Java objects themselves are not placed on the stack. 
+                </li>
+                <br>
+                <li>
+                    <b>The heap</b>. This is a general-purpose pool of memory (also in the RAM area) where all
+                    Java objects live. The nice thing about the heap is that, unlike the stack, the compiler
+                    doesn’t need to know how long that storage must stay on the heap. Thus, there’s a
+                    great deal of flexibility in using storage on the heap. Whenever you need an object, you
+                    simply write the code to create it by using <b>new</b>, and the storage is allocated on the
+                    heap when that code is executed. Of course there’s a price you pay for this flexibility: It
+                    may take more time to allocate and clean up heap storage than stack storage (if you
+                    even <b><i>could</i></b> create objects on the stack in Java, as you can in C++). 
+                </li>
+                <br>
+                <li>
+                    <b>Constant storage</b>. Constant values are often placed directly in the program code,
+                    which is safe since they can never change. Sometimes constants are cordoned off by
+                    themselves so that they can be optionally placed in read-only memory (ROM), in
+                    embedded systems<span class='footnote' data-toggle="tooltip" title="An example of this is the string pool. All literal strings and string-valued constant expressions are interned automatically
+                    and put into special static storage. "></span>
+                </li>
+                <br>
+                <li>
+                    <b>Non-RAM storage</b>. If data lives completely outside a program, it can exist while the
+                    program is not running, outside the control of the program. The two primary
+                    examples of this are <b><i>streamed objects</i></b>, in which objects are turned into streams of
+                    bytes, generally to be sent to another machine, and <b><i>persistent objects</i></b>, in which the
+                    objects are placed on disk so they will hold their state even when the program is
+                    terminated. The trick with these types of storage is turning the objects into something
+                    that can exist on the other medium, and yet can be resurrected into a regular RAMbased object when
+                    necessary. Java provides support for <b><i>lightweight persistence</i></b>, and
+                    mechanisms such as JDBC and Hibernate provide more sophisticated support for
+                    storing and retrieving object information in databases.  
+                </li>
+            </ol>
+            <h4>
+                Special case: primitive types 
+            </h4>
+            <br>
+            One group of types, which you’ll use quite often in your programming, gets special treatment.
+            You can think of these as “primitive” types. The reason for the special treatment is that to
+            create an object with <b>new</b>—especially a small, simple variable—isn’t very efficient, because
+            <b>new</b> places objects on the heap. For these types Java falls back on the approach taken by C
+            and C++. That is, instead of creating the variable by using <b>new</b>, an “automatic” variable is
+            created that is <b><i>not a reference</i></b>. The variable holds the value directly, and it’s placed on the
+            stack, so it’s much more efficient.
+            <br>
+            <br>
+            Java determines the size of each primitive type. These sizes don’t change from one machine
+            architecture to another as they do in most languages. This size invariance is one reason Java
+            programs are more portable than programs in most other languages. 
+            <br>
+            <br>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Primitive type</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Minimum</th>
+                        <th scope="col">Maximum</th>
+                        <th scope="col">Wrapper type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">boolean</th>
+                        <td class="text-center">—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <th>Boolean</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">char</th>
+                        <td class="text-center">16 bits</td>
+                        <td>Unicode 0</td>
+                        <td>Unicode 2<sup>16</sup>- 1</td>
+                        <th>Character</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">byte</th>
+                        <td class="text-center">8 bits</td>
+                        <td>-128</td>
+                        <td>+127</td>
+                        <th>Byte</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">short</th>
+                        <td class="text-center">16 bits</td>
+                        <td>-2<sup>15</sup></td>
+                        <td>+2<sup>15</sup>-1</td>
+                        <th>Short</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">int</th>
+                        <td class="text-center">32 bits</td>
+                        <td>-2<sup>31</sup></td>
+                        <td>+2<sup>31</sup>-1</td>
+                        <th>Integer</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">long</th>
+                        <td class="text-center">64 bits</td>
+                        <td>-2<sup>63</sup></td>
+                        <td>+2<sup>63</sup>-1</td>
+                        <th>Long</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">float</th>
+                        <td class="text-center">32 bits</td>
+                        <td>IEEE754</td>
+                        <td>IEEE754</td>
+                        <th>Float</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">double</th>
+                        <td class="text-center">64 bits</td>
+                        <td>IEEE754</td>
+                        <td>IEEE754</td>
+                        <th>Double</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">void</th>
+                        <td class="text-center">—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <th>Void</th>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+            <br>
+            <br>
+            All numeric types are signed, so don’t look for unsigned types. 
+            <br>
+            <br>
+            The size of the <b>boolean</b> type is not explicitly specified; it is only defined to be able to take
+            the literal values <b>true</b> or <b>false</b>. 
+            <br>
+            <br>
+            The “wrapper” classes for the primitive data types allow you to make a non-primitive object
+            on the heap to represent that primitive type. For example: 
+            <br>
+            <br>
+            <code>char c = ‘x’;</code>  
+            <br>
+            <code>Character ch = new Character(c); </code>
+            <br>
+            <br>
+            Or you could also use: 
+            <br>
+            <br>
+            <code>Character ch = new Character(‘x’);</code>  
+            <br>
+            <br>
+            Java SE5 <b><i>autoboxing</i></b> will automatically convert from a primitive to a wrapper type: 
+            <br>
+            <br>
+            <code>Character ch = ‘x’;</code>  
+            <br>
+            <br>
+            and back: 
+            <br>
+            <br>
+            <code>char c = ch;</code>  
+            <br>
+            <br>
+            The reasons for wrapping primitives will be shown in a later chapter. 
+            <br>
+            <br>
+            <h5>High-precision numbers </h5>
+            Java includes two classes for performing high-precision arithmetic: <b>BigInteger</b> and
+            <b>BigDecimal</b>. Although these approximately fit into the same category as the “wrapper”
+            classes, neither one has a primitive analogue. 
+            <br>
+            <br>
+            Both classes have methods that provide analogues for the operations that you perform on
+            primitive types. That is, you can do anything with a <b>BigInteger</b> or <b>BigDecimal</b> that you
+            can with an <b>int</b> or <b>float</b>, it’s just that you must use method calls instead of operators. Also,
+            since there’s more involved, the operations will be slower. You’re exchanging speed for
+            accuracy. 
+            <br>
+            <br>
+            <b>BigInteger</b> supports arbitrary-precision integers. This means that you can accurately
+            represent integral values of any size without losing any information during operations. 
+            <br>
+            <br>
+            <b>BigDecimal</b> is for arbitrary-precision fixed-point numbers; you can use these for accurate
+            monetary calculations, for example. 
+            <br>
+            <br>
+            Consult the JDK documentation for details about the constructors and methods you can call
+            for these two classes. 
+            <br>
+            <br>
+            <h4>
+                Arrays in Java
+            </h4>
+            Virtually all programming languages support some kind of arrays. Using arrays in C and C++
+            is perilous because those arrays are only blocks of memory. If a program accesses the array
+            outside of its memory block or uses the memory before initialization (common programming
+            errors), there will be unpredictable results.
+            <br>
+            <br>
+            One of the primary goals of Java is safety, so many of the problems that plague programmers
+            in C and C++ are not repeated in Java. A Java array is guaranteed to be initialized and cannot 
+            be accessed outside of its range. The range checking comes at the price of having a small
+            amount of memory overhead on each array as well as verifying the index at run time, but the
+            assumption is that the safety and increased productivity are worth the expense (and Java can
+            sometimes optimize these operations).
+            <br>
+            <br>
+            When you create an array of objects, you are really creating an array of references, and each
+            of those references is automatically initialized to a special value with its own keyword: <b>null</b>.
+            When Java sees <b>null</b>, it recognizes that the reference in question isn’t pointing to an object.
+            You must assign an object to each reference before you use it, and if you try to use a reference
+            that’s still <b>null</b>, the problem will be reported at run time. Thus, typical array errors are
+            prevented in Java. 
+            <br>
+            <br>
+            You can also create an array of primitives. Again, the compiler guarantees initialization
+            because it zeroes the memory for that array. 
+            <br>
+            <br>
+            Arrays will be covered in detail in later chapters.
+        </p>
+        <a name="never"></a>
+        <h3>
+            You never need to  
+        </h3>
+        <h3 class="ml-5">
+            destroy an object
+        </h3>
+        <p>
+            In most programming languages, the concept of the lifetime of a variable occupies a
+            significant portion of the programming effort. How long does the variable last? If you are
+            supposed to destroy it, when should you? Confusion over variable lifetimes can lead to a lot
+            of bugs, and this section shows how Java greatly simplifies the issue by doing all the cleanup
+            work for you. 
+            <h4>
+                Scoping 
+            </h4>
+            Most procedural languages have the concept of <b><i>scope</i></b>. This determines both the visibility and
+            lifetime of the names defined within that scope. In C, C++, and Java, scope is determined by
+            the placement of curly braces <b>{}</b>. So for example:
+            <br>
+            <br>
+            <code>{ </code>
+                <br>
+                <code>&nbsp &nbsp int x = 12; </code>
+                <br>
+                <code>&nbsp &nbsp // Only x available </code>
+                <br>
+            <code>{ </code>
+                <br>
+                <code>&nbsp &nbsp int q = 96; </code>
+                <br>
+                <code>&nbsp &nbsp // Both x & q available </code>
+                <br>
+            <code>} </code>
+                <br>
+                <code>&nbsp &nbsp // Only x available </code>
+                <br>
+                <code>&nbsp &nbsp // q is "out of scope" </code>
+                <br>
+            <code>} </code>
+            <br>
+            <br> 
+            A variable defined within a scope is available only to the end of that scope. 
+            <br>
+            <br>
+            Any text after a ‘//’ to the end of a line is a comment. 
+            <br>
+            <br>
+            Indentation makes Java code easier to read. Since Java is a free-form language, the extra
+            spaces, tabs, and carriage returns do not affect the resulting program. 
+            <br>
+            <br>
+            You <b><i>cannot</i></b> do the following, even though it is legal in C and C++:
+            <br>
+            <br>
+            <code>{</code>
+                <br>
+                <code>&nbsp &nbsp int x = 12;</code>
+                <br>
+                <code>&nbsp &nbsp {</code>
+                <br>
+                    <code>&nbsp &nbsp &nbsp &nbsp int x = 96; // Illegal </code>
+                    <br>
+                <code>&nbsp &nbsp }</code>
+                <br>
+            <code>}</code>
+            <br>
+            <br>
+            The compiler will announce that the variable x has already been defined. Thus the C and C++
+            ability to “hide” a variable in a larger scope is not allowed, because the Java designers
+            thought that it led to confusing programs.
+            <br>
+            <br>
+            <h4>
+                Scope of objects  
+            </h4>
+            Java objects do not have the same lifetimes as primitives. When you create a Java object
+            using <b>new</b>, it hangs around past the end of the scope. Thus if you use: 
+            <br>
+            <br>
+            <code>{</code>
+                <br>
+                <code>&nbsp &nbsp String s = new String("a string");</code>
+                <br>
+            <code>} // End of scope</code>
+            <br>
+            <br>
+            the reference <b>s</b> vanishes at the end of the scope. However, the <b>String</b> object that <b>s</b> was
+            pointing to is still occupying memory. In this bit of code, there is no way to access the object
+            after the end of the scope, because the only reference to it is out of scope. In later chapters
+            you’ll see how the reference to the object can be passed around and duplicated during the
+            course of a program. 
+            <br>
+            <br>
+            It turns out that because objects created with <b>new</b> stay around for as long as you want them,
+            a whole slew of C++ programming problems simply vanish in Java. In C++ you must not only
+            make sure that the objects stay around for as long as you need them, you must also destroy
+            the objects when you’re done with them. 
+            <br>
+            <br>
+            That brings up an interesting question. If Java leaves the objects lying around, what keeps
+            them from filling up memory and halting your program? This is exactly the kind of problem
+            that would occur in C++. This is where a bit of magic happens. Java has a <b><i>garbage collector</i></b>,
+            which looks at all the objects that were created with <b>new</b> and figures out which ones are not
+            being referenced anymore. Then it releases the memory for those objects, so the memory can
+            be used for new objects. This means that you never need to worry about reclaiming memory
+            yourself. You simply create objects, and when you no longer need them, they will go away by
+            themselves. This eliminates a certain class of programming problem: the so-called “memory
+            leak,” in which a programmer forgets to release memory. 
+        </p>
+    </main>
+ 
+    <footer class="page-footer font-small blue">
+
+      <!-- Copyright -->
+      <div class="footer-copyright py-3">© 2019 Copyright:
+        <a href="mailto:jan.ilczuk@gmail.com"> Jan Ilczuk</a>
+      </div>
+      <!-- Copyright -->
+    
+    </footer>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+  </body>
+</html>
